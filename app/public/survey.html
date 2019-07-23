@@ -48,7 +48,9 @@
         <hr />
         <h4>Question 1</h4>
         <div class="form-group">
-          <label for="question1">Question text here</label>
+          <label for="question1"
+            >I love to meet new people and make new friends.</label
+          >
           <div class="row">
             <div class="col-md-2.5">
               <select class="form-control" id="question1">
@@ -64,7 +66,7 @@
         </div>
         <h4>Question 2</h4>
         <div class="form-group">
-          <label for="question2">Question text here</label>
+          <label for="question2">I am more of a leader than a follower.</label>
           <div class="row">
             <div class="col-md-2.5">
               <select class="form-control" id="question2">
@@ -80,7 +82,7 @@
         </div>
         <h4>Question 3</h4>
         <div class="form-group">
-          <label for="question3">Question text here</label>
+          <label for="question3">I feel most relaxed when I'm by myself.</label>
           <div class="row">
             <div class="col-md-2.5">
               <select class="form-control" id="question3">
@@ -96,7 +98,9 @@
         </div>
         <h4>Question 4</h4>
         <div class="form-group">
-          <label for="question4">Question text here</label>
+          <label for="question4"
+            >I am generally pretty open to trying new foods.</label
+          >
           <div class="row">
             <div class="col-md-2.5">
               <select class="form-control" id="question4">
@@ -112,7 +116,9 @@
         </div>
         <h4>Question 5</h4>
         <div class="form-group">
-          <label for="question5">Question text here</label>
+          <label for="question5"
+            >I tend to be more optimistic than pessimistic.</label
+          >
           <div class="row">
             <div class="col-md-2.5">
               <select class="form-control" id="question5">
@@ -128,7 +134,7 @@
         </div>
         <h4>Question 6</h4>
         <div class="form-group">
-          <label for="question6">Question text here</label>
+          <label for="question6">I am more of a talker than a listener.</label>
           <div class="row">
             <div class="col-md-2.5">
               <select class="form-control" id="question6">
@@ -144,7 +150,7 @@
         </div>
         <h4>Question 7</h4>
         <div class="form-group">
-          <label for="question7">Question text here</label>
+          <label for="question7">I enjoy being spontaneous.</label>
           <div class="row">
             <div class="col-md-2.5">
               <select class="form-control" id="question7">
@@ -160,7 +166,7 @@
         </div>
         <h4>Question 8</h4>
         <div class="form-group">
-          <label for="question8">Question text here</label>
+          <label for="question8">I like dogs more than cats.</label>
           <div class="row">
             <div class="col-md-2.5">
               <select class="form-control" id="question8">
@@ -176,7 +182,10 @@
         </div>
         <h4>Question 9</h4>
         <div class="form-group">
-          <label for="question9">Question text here</label>
+          <label for="question9"
+            >I believe most people are well-intentioned, even if I might
+            disagree with them.</label
+          >
           <div class="row">
             <div class="col-md-2.5">
               <select class="form-control" id="question9">
@@ -192,7 +201,9 @@
         </div>
         <h4>Question 10</h4>
         <div class="form-group">
-          <label for="question10">Question text here</label>
+          <label for="question10"
+            >I would rather read a book than watch a movie.</label
+          >
           <div class="row">
             <div class="col-md-2.5">
               <select class="form-control" id="question10">
@@ -254,13 +265,12 @@
     };
     console.log(newFriend);
 
-    $.post(
-      "/api/friends",
-      newFriend,
-      // function(data) {
-      //     if (data)
-      // }
-
+    $.post("/api/friends", newFriend)
+    .then(function(data) {
+        console.log("survey.html", data);
+        alert("Adding new friend!");
+    });
+  }
       //   This should clear the form after its been submitted
       $("#name").val(""),
       $("#photo").val(""),
@@ -274,6 +284,5 @@
       $("#question8").val(""),
       $("#question9").val(""),
       $("#question10").val("")
-    );
-  });
+  );
 </script>
