@@ -6,22 +6,24 @@ module.exports = function(app) {
   });
 
   app.post("/api/friends", function(req, res) {
-    var newFriend = req.body;
-    var newScore = 0;
-    var total = 0;
+    var totalDifference = 0;
     var match = {
       name: "",
       photo: "",
       difference: 1000
     };
 
+    var newFriend = req.body;
+
     // calculating the total is not complete
+
     for (var i = 0; i < friends.length; i++) {
-      total = 0;
+      var possibleMatch = +Math.abs(
+        parseInt(newFriend.surveyQuestion[1] - friends[i].surveyQuestions[1])
+      );
     }
 
     friends.push(newFriend);
-    res.json(match);
-    console.log(match);
+    res.json(friends[match]);
   });
 };
