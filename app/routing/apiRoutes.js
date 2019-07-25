@@ -21,13 +21,17 @@ module.exports = function(app) {
     // calculating the total is not complete
 
     for (var i = 0; i < friends.length; i++) {
-      possibleMatch = +Math.abs(
-        parseInt(newFriend.surveyQuestions[1] - friends[i].surveyQuestions[1])
-      );
-      if (possibleMatch <= match.difference) {
-        match.name = friends[i].name;
-        match.name = friends[i].photo;
-        match.difference = possibleMatch;
+      possibleMatch = 0;
+
+      for (var h = 0; h < friends[i].surveyQuestions[h]; h++) {
+        possibleMatch = +Math.abs(
+          parseInt(newFriend.surveyQuestions[1] - friends[i].surveyQuestions[1])
+        );
+        if (possibleMatch <= match.difference) {
+          match.name = friends[i].name;
+          match.name = friends[i].photo;
+          match.difference = possibleMatch;
+        }
       }
     }
 
