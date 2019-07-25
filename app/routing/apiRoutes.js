@@ -18,7 +18,7 @@ module.exports = function(app) {
     var newPhoto = newFriend.photo;
     var newScore = newFriend.surveyQuestions;
 
-    // calculating the total is not complete
+    // I have added in two for loops.  This should loop through the friends listed friends.js and loop through the scores and populate a friend.  I am not quite sure where I have gone wrong with my code.
 
     for (var i = 0; i < friends.length; i++) {
       possibleMatch = 0;
